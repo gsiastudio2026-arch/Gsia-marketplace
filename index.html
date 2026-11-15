@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GSIA MARKETPLACE - Applications, Jeux, IA, Formations au Togo | Lomé</title>
-<meta name="description" content="GSIA MARKETPLACE Togo - La technologie à portée de tous. Jeux gratuits, applications IA, Moto Pilot, Exam Blanc, formations. Lomé, Togo. Paiement Mixx by Yas et Flooz.">
+<title>GSIA MARKETPLACE - Applications, Jeux, IA, Formations, Annonces au Togo | Lomé</title>
+<meta name="description" content="GSIA MARKETPLACE Togo - La technologie à portée de tous. Jeux gratuits, applications IA, Moto Pilot, Exam Blanc, Annonces, Pub pour boutiques, Parrainage. Lomé, Aného, Togo. Paiement Mixx by Yas et Flooz.">
+<meta name="keywords" content="GSIA, GSIA STUDIO, GSIA MARKETPLACE, Togo, Lomé, application Togo, IA Togo, moto pilot, formation Togo, jeu Togo, annonce Togo, vendre Lomé, Mixx, Flooz">
+<meta property="og:title" content="GSIA MARKETPLACE - Viens t'abreuver chaque jour">
+<meta property="og:description" content="Jeux gratuits, IA, Exam Blanc, Annonces, Formations. Lomé, Togo. Gagne en parrainant tes amis.">
 <style>
 body{background:#0a140f;color:#fff;font-family:Arial;margin:0;text-align:center}
 header{background:#FFD700;color:#000;padding:22px 10px}
@@ -20,19 +23,32 @@ nav button.active{background:#FFD700;color:#000}
 .card h3{color:#FFD700;margin:0}.card p{font-size:13px}
 .price{font-size:21px;font-weight:bold;color:#00ff00}.old{color:#aaa;text-decoration:line-through;font-size:13px}
 button.buy{width:100%;padding:12px;border:none;border-radius:12px;font-weight:bold;font-size:16px;margin-top:8px}
-.gold{background:#FFD700}.green{background:#00a651;color:#fff}.grey{background:#333;color:#fff}.blue{background:#007bff;color:#fff}.purple{background:#7b00ff;color:#fff}
+.gold{background:#FFD700}.green{background:#00a651;color:#fff}.grey{background:#333;color:#fff}.blue{background:#007bff;color:#fff}.purple{background:#7b00ff;color:#fff}.orange{background:#ff6600;color:#fff}.pink{background:#ff0080;color:#fff}
 .paybox{background:#2a1a00;border:2px solid #FFD700;border-radius:12px;padding:12px;margin:12px auto;max-width:430px;text-align:left;font-size:13px}
 .freeTag{background:#00a651;color:#fff;padding:3px 8px;border-radius:10px;font-size:11px}
 .newTag{background:#ff0000;color:#fff;padding:3px 8px;border-radius:10px;font-size:11px}
+.hotTag{background:#ff6600;color:#fff;padding:3px 8px;border-radius:10px;font-size:11px}
+.annonceCard{background:#fff;color:#000;border:3px solid #FFD700;border-radius:15px;padding:14px;margin-bottom:14px;text-align:left}
+.annonceCard h3{color:#000;margin:0}
+.pubBox{background:linear-gradient(90deg,#ff0080,#ff6600);border-radius:14px;padding:14px;margin:10px;text-align:left}
+.parrainBox{background:linear-gradient(90deg,#00a651,#007bff);border-radius:14px;padding:14px;margin:10px;text-align:left}
 </style>
 </head>
 <body>
 <header>
 <div class="badge">GSIA STUDIO - LOMÉ, TOGO 🇹🇬</div>
 <h1>GSIA MARKETPLACE 🛒</h1>
-<p><b>Viens t'abreuver chaque jour.</b><br>Jeux gratuits, IA, vidéos, formations. La technologie à portée de tous.</p>
-<p style="font-size:12px">🔥 <span id="visiteurs">1 247</span> personnes sont venues boire aujourd'hui</p>
+<p><b>Viens t'abreuver chaque jour.</b><br>Jeux gratuits, IA, vidéos, formations, annonces. La technologie à portée de tous.</p>
+<p style="font-size:12px">🔥 <span id="visiteurs">1 282</span> personnes sont venues boire aujourd'hui</p>
 </header>
+
+<!-- PUB BOUTIQUE - GAGNE 2000F -->
+<div class="pubBox">
+<b>📢 PUB - CET EMPLACEMENT EST À LOUER :</b><br>
+<span style="font-size:13px">Ta boutique ici, vue par 1 000+ personnes / jour à Lomé. 2 000 F / semaine seulement.</span><br>
+<button class="buy gold" onclick="commander('PUB BOUTIQUE - Je veux louer la bannière PUB à 2000F / semaine')">📢 LOUER CETTE PUB - 2000 F / SEMAINE</button>
+</div>
+
 <div class="voixBox">
 <b>🔊 VOIX IA GSIA - ÉCOUTE L'EXPLICATION :</b><br>
 Comme dans la vidéo CEPD-BLANC, la voix t'explique tout en 60 secondes.<br>
@@ -40,82 +56,138 @@ Comme dans la vidéo CEPD-BLANC, la voix t'explique tout en 60 secondes.<br>
 <button class="buy grey" onclick="stopVoix()">⏹️ ARRÊTER LA VOIX</button>
 <p id="voixTxt" style="font-size:12px;color:#00ff00">Appuie sur ÉCOUTER, monte le son 🔊</p>
 </div>
+
+<!-- PARRAINAGE - GAGNE 500F -->
+<div class="parrainBox">
+<b>💰 GSIA PARRAINAGE - GAGNE DE L'ARGENT :</b><br>
+<span style="font-size:13px">Partage ton lien à 5 amis. Si 1 ami achète, tu gagnes <b>500 F</b> en Mixx / Flooz. Sans travailler.</span><br>
+<button class="buy gold" onclick="parrainer()">💰 GAGNER 500 F - PARTAGER MON LIEN</button>
+<p id="parrainTxt" style="font-size:12px">Ton code parrain : <b>GSIA-92817593</b> - Dis à tes amis de donner ce code sur WhatsApp.</p>
+</div>
+
 <nav>
 <button class="active" onclick="filtreCat('tout',this)">🏠 Tout</button>
 <button onclick="filtreCat('gratuit',this)">🎁 GRATUIT</button>
 <button onclick="filtreCat('jeu',this)">🎮 Jeux</button>
 <button onclick="filtreCat('formation',this)">🎓 Formations</button>
 <button onclick="filtreCat('ecole',this)">🏫 École</button>
+<button onclick="filtreCat('annonce',this)">📢 Annonces</button>
 <button onclick="filtreCat('premium',this)">👑 Premium</button>
 </nav>
-<input id="search" placeholder="🔍 Cherche : moto, ia, jeu, examen, formation..." onkeyup="filtrer()">
+
+<input id="search" placeholder="🔍 Cherche : moto, ia, jeu, examen, annonce, formation..." onkeyup="filtrer()">
+
 <div class="hero">
 <b>🎁 ZONE GRATUITE - ABREUVE-TOI :</b><br>
 Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu reviens demain.<br>
 <button class="buy blue" onclick="commander('Je veux recevoir le GRATUIT du jour')">💧 RECEVOIR LE GRATUIT DU JOUR</button>
 </div>
+
 <div class="paybox">
 <b>💳 COMMENT PAYER ?</b><br>
 1. Clique COMMANDER -> WhatsApp s'ouvre<br>
 2. Paie par <b>Mixx by Yas</b> ou <b>Flooz</b> au <b>+228 92 81 75 93</b><br>
 3. Tu reçois le lien sur WhatsApp. Simple.
 </div>
+
 <div class="grid" id="grid">
+
+<!-- ANNONCES - 1000F -->
+<div class="annonceCard" data-cat="annonce" data-nom="annonce moto vendre">
+<h3>📢 GSIA ANNONCES - VENDS VITE À LOMÉ <span class="hotTag">POPULAIRE</span></h3>
+<p><b>Tu veux vendre ?</b> Moto, téléphone, perruque, terrain, frigo...<br>Publie ici, 1 000+ personnes voient ton annonce chaque jour. Tu vends plus vite que sur Facebook.</p>
+<p style="font-size:16px;font-weight:bold;color:#00a651">Publication : 1 000 F / 7 jours</p>
+<button class="buy orange" onclick="commander('ANNONCE - Je veux publier mon annonce à 1000F / 7 jours. Mon produit : ')">➕ PUBLIER MON ANNONCE - 1000 F</button>
+</div>
+
+<div class="annonceCard" data-cat="annonce" data-nom="moto apsonic vendre lomé">
+<h3>🛵 À VENDRE - Moto APSONIC 125 - Lomé Bè</h3>
+<p>Année 2023, très propre, papiers à jour. Prix : <b>450 000 F</b> à débattre. Contact vendeur via GSIA.</p>
+<button class="buy grey" onclick="commander('Je veux la Moto APSONIC 125 à 450 000F - Annonce GSIA')">💬 CONTACTER LE VENDEUR</button>
+</div>
+
+<div class="annonceCard" data-cat="annonce" data-nom="iphone samsung téléphone vendre">
+<h3>📱 À VENDRE - iPhone 11 - 128Go - Agoè</h3>
+<p>Batterie 89%, jamais réparé, avec chargeur. Prix : <b>95 000 F</b>. Premier venu, premier servi.</p>
+<button class="buy grey" onclick="commander('Je veux le iPhone 11 à 95 000F - Annonce GSIA')">💬 CONTACTER LE VENDEUR</button>
+</div>
+
+<div class="annonceCard" data-cat="annonce" data-nom="terrain vendre aného">
+<h3>🏡 À VENDRE - Terrain 300m2 - Aného</h3>
+<p>Terrain titré, à 5 min de la route. Prix : <b>1 500 000 F</b>. Dossier complet disponible.</p>
+<button class="buy grey" onclick="commander('Je veux le Terrain 300m2 à Aného à 1 500 000F - Annonce GSIA')">💬 CONTACTER LE VENDEUR</button>
+</div>
+
+<!-- ANCIENS PRODUITS - ON GARDE TOUT -->
 <div class="card" data-cat="ecole" data-nom="exam blanc cepd ecole">
 <h3>🏫 GSIA EXAM-BLANC <span class="newTag">NOUVEAU</span></h3>
-<p><b>Vos examens blancs, sans casse-tête.</b><br>Comme dans la vidéo : Inscrivez vos élèves, créez vos salles, répartissez automatiquement, saisissez les notes, les totaux et moyennes sont calculés automatiquement. Imprimez les relevés, les classements et les listes des admis. Même sans internet pendant 7 jours.<br>⭐ Pour les écoles du Togo</p>
+<p><b>Vos examens blancs, sans casse-tête.</b><br>Inscrivez vos élèves, créez vos salles, répartissez automatiquement, saisissez les notes, les totaux et moyennes sont calculés automatiquement. Imprimez les relevés, les classements et les listes des admis. Même sans internet pendant 7 jours.<br>⭐ Pour les écoles du Togo</p>
 <p class="price">1 000 F / semaine <span class="old">2 000 F</span></p>
 <p style="font-size:12px">✅ 1 jour d'essai GRATUIT</p>
 <button class="buy purple" onclick="parlerExam()">🔊 ÉCOUTER L'EXPLICATION EXAM-BLANC</button>
 <button class="buy gold" onclick="commander('GSIA EXAM-BLANC - 1000F par semaine - Je veux 1 jour gratuit')">🛒 COMMANDER - 1 JOUR GRATUIT</button>
 </div>
+
 <div class="card" data-cat="gratuit jeu" data-nom="moto pilot demo gratuit">
 <h3>🛵 GSIA MOTO PILOT - DÉMO GRATUITE <span class="freeTag">GRATUIT</span></h3>
 <p>Teste la moto qui roule seule Lomé -> Aného. Frein auto, klaxon, phare. Joue gratuitement maintenant.</p>
 <button class="buy grey" onclick="demo('https://gsiastudio2026-arch.github.io/Gsia-moto-pilot/?v=5')">🎮 JOUER GRATUIT MAINTENANT</button>
 </div>
+
 <div class="card" data-cat="jeu premium" data-nom="moto pilot v5">
 <h3>🛵 GSIA MOTO PILOT V5 - FINALE ⭐ BEST SELLER</h3>
 <p>Version complète : Score, Distance 45km, Carburant, Station Total, Son moteur VROUM. Sans pub.</p>
 <p class="price">2 000 F <span class="old">5 000 F</span></p>
 <button class="buy gold" onclick="commander('GSIA MOTO PILOT V5 - 2000F')">🛒 COMMANDER - 2000 F</button>
 </div>
+
 <div class="card" data-cat="gratuit" data-nom="citation motivation">
 <h3>💧 CITATION DU JOUR - GRATUITE</h3>
 <p>"Le Togo n'attend pas l'avenir. Le Togo le construit." - GSIA STUDIO</p>
 <button class="buy grey" onclick="commander('Je veux la citation du jour')">💧 RECEVOIR SUR WHATSAPP</button>
 </div>
+
 <div class="card" data-cat="gratuit" data-nom="cerveau ia affiche">
 <h3>🧠 GSIA CERVEAU IA - AFFICHE VERTE & OR</h3>
 <p>L'affiche GSIA STUDIO verte et or que tout le monde partage. Version HD pour ton statut WhatsApp.</p>
 <p class="price">Vidéo : 0 F | Pack Affiche HD : 1 000 F</p>
 <button class="buy gold" onclick="commander('PACK AFFICHE GSIA STUDIO - 1000F')">🛒 PACK AFFICHE - 1000 F</button>
 </div>
+
 <div class="card" data-cat="formation premium" data-nom="formation">
 <h3>🎓 FORMATION GSIA - Crée ton application en 7 jours</h3>
 <p>Avec ton téléphone seulement, sans ordinateur. Tu crées ton application comme MOTO PILOT.</p>
 <p class="price">5 000 F <span class="old">10 000 F</span></p>
 <button class="buy gold" onclick="commander('FORMATION GSIA 7 JOURS - 5000F')">🛒 COMMANDER - 5000 F</button>
 </div>
+
 <div class="card" data-cat="premium" data-nom="pack premium tout">
 <h3>👑 PACK PREMIUM GSIA - TOUT</h3>
 <p>MOTO PILOT V5 + EXAM-BLANC + AFFICHE GSIA + Formation 7 jours + Groupe privé + Toutes les futures applis.</p>
 <p class="price">10 000 F <span class="old">20 000 F</span></p>
 <button class="buy green" onclick="commander('PACK PREMIUM GSIA - 10000F')">👑 COMMANDER PACK - 10000 F</button>
 </div>
+
 </div>
+
+<div class="paybox">
+<b>🤝 PARTENARIAT GSIA :</b><br>École, boutique, association, influenceur ? Rejoins GSIA MARKETPLACE.<br>Tu gagnes, on gagne ensemble.<br>
+<button class="buy pink" onclick="commander('PARTENARIAT GSIA - Je suis une école / boutique / influenceur, je veux un partenariat')">🤝 DEVENIR PARTENAIRE GSIA</button>
+</div>
+
 <div class="paybox">
 <b>📞 ASSISTANCE GSIA :</b><br>WhatsApp : <b>+228 92 81 75 93</b> - Lomé, Togo<br>
 Réponse 8h à 22h. On t'aide à payer par Mixx / Flooz.
 </div>
 <footer>© 2026 GSIA STUDIO - GSIA MARKETPLACE<br>Site vitrine Togo - Paiement manuel Mixx / Flooz via WhatsApp</footer>
+
 <script>
 const WHATSAPP="22892817593";
 function commander(p){ let m=encodeURIComponent("Bonjour GSIA STUDIO 🇹🇬, je veux : "+p+". Comment je paie par Mixx / Flooz ?"); window.open("https://wa.me/"+WHATSAPP+"?text="+m,"_blank"); }
 function demo(l){ window.open(l,"_blank"); }
-function filtrer(){ let v=document.getElementById('search').value.toLowerCase(); document.querySelectorAll('.card').forEach(c=>{ c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none'; }); }
-function filtreCat(cat,btn){ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.card').forEach(c=>{ c.style.display=(cat=='tout'||c.getAttribute('data-cat').includes(cat))?'block':'none'; }); }
-let v=1247; setInterval(()=>{ v+=Math.floor(Math.random()*3); document.getElementById('visiteurs').innerText=v.toLocaleString(); },4000);
+function filtrer(){ let v=document.getElementById('search').value.toLowerCase(); document.querySelectorAll('.card, .annonceCard').forEach(c=>{ c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none'; }); }
+function filtreCat(cat,btn){ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.card, .annonceCard').forEach(c=>{ c.style.display=(cat=='tout'||c.getAttribute('data-cat').includes(cat))?'block':'none'; }); }
+let v=1282; setInterval(()=>{ v+=Math.floor(Math.random()*3); document.getElementById('visiteurs').innerText=v.toLocaleString(); },4000);
 function parler(){
   speechSynthesis.cancel();
   let txt="Bienvenue sur GSIA Marketplace. Un examen blanc, ce n'est pas seulement des copies à corriger. C'est aussi des listes à préparer, des salles à répartir, des notes à saisir et des résultats à calculer. GSIA Marketplace, développé par GSIA Studio à Lomé, centralise tout. Inscrivez vos élèves, créez vos salles, saisissez vos notes, les totaux et les moyennes sont calculés automatiquement. Essayez gratuitement, puis continuez pour mille francs CFA par semaine. Contactez-nous sur WhatsApp au quatre-vingt-douze, quatre-vingt-un, soixante-quinze, quatre-vingt-treize. GSIA Marketplace, la technologie à portée de tous.";
@@ -131,6 +203,11 @@ function parlerExam(){
   speechSynthesis.speak(u);
 }
 function stopVoix(){ speechSynthesis.cancel(); document.getElementById('voixTxt').innerText="Voix arrêtée. Appuie sur ÉCOUTER pour recommencer."; }
+function parrainer(){
+  let lien="https://gsiastudio2026-arch.github.io/gsia-marketplace/ - Code: GSIA-92817593 - Gagne 500F";
+  let m=encodeURIComponent("Salut ! Viens t'abreuver sur GSIA MARKETPLACE 🛒 Jeux gratuits, IA, Annonces, Exam Blanc. Si tu achètes, donne mon code GSIA-92817593 et je gagne 500F, toi aussi tu as une surprise. Lien : https://gsiastudio2026-arch.github.io/gsia-marketplace/");
+  window.open("https://wa.me/?text="+m,"_blank");
+}
 </script>
 </body>
 </html>
