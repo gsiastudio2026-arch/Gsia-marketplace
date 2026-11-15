@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GSIA MARKETPLACE - Applications, Jeux, IA, Formations au Togo | Lomé</title>
-<meta name="description" content="GSIA MARKETPLACE Togo - La technologie à portée de tous. Jeux gratuits, applications IA, Moto Pilot, formations, vidéos virales. Lomé, Aného, Togo. Paiement Mixx by Yas et Flooz.">
-<meta name="keywords" content="GSIA, GSIA STUDIO, Togo, Lomé, application Togo, IA Togo, moto pilot, formation Togo, jeu Togo, Mixx, Flooz">
+<meta name="description" content="GSIA MARKETPLACE Togo - La technologie à portée de tous. Jeux gratuits, applications IA, Moto Pilot, Exam Blanc, formations. Lomé, Togo. Paiement Mixx by Yas et Flooz.">
 <style>
 body{background:#0a140f;color:#fff;font-family:Arial;margin:0;text-align:center}
 header{background:#FFD700;color:#000;padding:22px 10px}
@@ -15,14 +14,16 @@ nav button{background:#222;color:#fff;border:1px solid #333;padding:9px 12px;bor
 nav button.active{background:#FFD700;color:#000}
 #search{width:90%;max-width:420px;padding:12px;border-radius:20px;border:none;margin:14px auto;display:block}
 .hero{background:#1a2a20;margin:10px;border-radius:14px;padding:14px;text-align:left}
+.voixBox{background:#002a1a;border:2px solid #00ff00;border-radius:14px;padding:14px;margin:10px;text-align:left}
 .grid{max-width:450px;margin:auto;padding:10px}
 .card{background:#1a2a20;border:2px solid #333;border-radius:15px;padding:14px;margin-bottom:14px;text-align:left}
 .card h3{color:#FFD700;margin:0}.card p{font-size:13px}
 .price{font-size:21px;font-weight:bold;color:#00ff00}.old{color:#aaa;text-decoration:line-through;font-size:13px}
 button.buy{width:100%;padding:12px;border:none;border-radius:12px;font-weight:bold;font-size:16px;margin-top:8px}
-.gold{background:#FFD700}.green{background:#00a651;color:#fff}.grey{background:#333;color:#fff}.blue{background:#007bff;color:#fff}
+.gold{background:#FFD700}.green{background:#00a651;color:#fff}.grey{background:#333;color:#fff}.blue{background:#007bff;color:#fff}.purple{background:#7b00ff;color:#fff}
 .paybox{background:#2a1a00;border:2px solid #FFD700;border-radius:12px;padding:12px;margin:12px auto;max-width:430px;text-align:left;font-size:13px}
 .freeTag{background:#00a651;color:#fff;padding:3px 8px;border-radius:10px;font-size:11px}
+.newTag{background:#ff0000;color:#fff;padding:3px 8px;border-radius:10px;font-size:11px}
 </style>
 </head>
 <body>
@@ -32,14 +33,22 @@ button.buy{width:100%;padding:12px;border:none;border-radius:12px;font-weight:bo
 <p><b>Viens t'abreuver chaque jour.</b><br>Jeux gratuits, IA, vidéos, formations. La technologie à portée de tous.</p>
 <p style="font-size:12px">🔥 <span id="visiteurs">1 247</span> personnes sont venues boire aujourd'hui</p>
 </header>
+<div class="voixBox">
+<b>🔊 VOIX IA GSIA - ÉCOUTE L'EXPLICATION :</b><br>
+Comme dans la vidéo CEPD-BLANC, la voix t'explique tout en 60 secondes.<br>
+<button class="buy green" onclick="parler()">▶️ 🔊 ÉCOUTER L'EXPLICATION IA</button>
+<button class="buy grey" onclick="stopVoix()">⏹️ ARRÊTER LA VOIX</button>
+<p id="voixTxt" style="font-size:12px;color:#00ff00">Appuie sur ÉCOUTER, monte le son 🔊</p>
+</div>
 <nav>
 <button class="active" onclick="filtreCat('tout',this)">🏠 Tout</button>
 <button onclick="filtreCat('gratuit',this)">🎁 GRATUIT</button>
 <button onclick="filtreCat('jeu',this)">🎮 Jeux</button>
 <button onclick="filtreCat('formation',this)">🎓 Formations</button>
+<button onclick="filtreCat('ecole',this)">🏫 École</button>
 <button onclick="filtreCat('premium',this)">👑 Premium</button>
 </nav>
-<input id="search" placeholder="🔍 Cherche : moto, ia, jeu, formation..." onkeyup="filtrer()">
+<input id="search" placeholder="🔍 Cherche : moto, ia, jeu, examen, formation..." onkeyup="filtrer()">
 <div class="hero">
 <b>🎁 ZONE GRATUITE - ABREUVE-TOI :</b><br>
 Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu reviens demain.<br>
@@ -52,6 +61,14 @@ Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu
 3. Tu reçois le lien sur WhatsApp. Simple.
 </div>
 <div class="grid" id="grid">
+<div class="card" data-cat="ecole" data-nom="exam blanc cepd ecole">
+<h3>🏫 GSIA EXAM-BLANC <span class="newTag">NOUVEAU</span></h3>
+<p><b>Vos examens blancs, sans casse-tête.</b><br>Comme dans la vidéo : Inscrivez vos élèves, créez vos salles, répartissez automatiquement, saisissez les notes, les totaux et moyennes sont calculés automatiquement. Imprimez les relevés, les classements et les listes des admis. Même sans internet pendant 7 jours.<br>⭐ Pour les écoles du Togo</p>
+<p class="price">1 000 F / semaine <span class="old">2 000 F</span></p>
+<p style="font-size:12px">✅ 1 jour d'essai GRATUIT</p>
+<button class="buy purple" onclick="parlerExam()">🔊 ÉCOUTER L'EXPLICATION EXAM-BLANC</button>
+<button class="buy gold" onclick="commander('GSIA EXAM-BLANC - 1000F par semaine - Je veux 1 jour gratuit')">🛒 COMMANDER - 1 JOUR GRATUIT</button>
+</div>
 <div class="card" data-cat="gratuit jeu" data-nom="moto pilot demo gratuit">
 <h3>🛵 GSIA MOTO PILOT - DÉMO GRATUITE <span class="freeTag">GRATUIT</span></h3>
 <p>Teste la moto qui roule seule Lomé -> Aného. Frein auto, klaxon, phare. Joue gratuitement maintenant.</p>
@@ -65,7 +82,7 @@ Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu
 </div>
 <div class="card" data-cat="gratuit" data-nom="citation motivation">
 <h3>💧 CITATION DU JOUR - GRATUITE</h3>
-<p>"Le Togo n'attend pas l'avenir. Le Togo le construit." - GSIA STUDIO<br>Partage ça sur ton statut WhatsApp, tes amis vont venir ici.</p>
+<p>"Le Togo n'attend pas l'avenir. Le Togo le construit." - GSIA STUDIO</p>
 <button class="buy grey" onclick="commander('Je veux la citation du jour')">💧 RECEVOIR SUR WHATSAPP</button>
 </div>
 <div class="card" data-cat="gratuit" data-nom="cerveau ia affiche">
@@ -82,7 +99,7 @@ Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu
 </div>
 <div class="card" data-cat="premium" data-nom="pack premium tout">
 <h3>👑 PACK PREMIUM GSIA - TOUT</h3>
-<p>MOTO PILOT V5 + AFFICHE GSIA + Formation 7 jours + Groupe privé + Toutes les futures applis.</p>
+<p>MOTO PILOT V5 + EXAM-BLANC + AFFICHE GSIA + Formation 7 jours + Groupe privé + Toutes les futures applis.</p>
 <p class="price">10 000 F <span class="old">20 000 F</span></p>
 <button class="buy green" onclick="commander('PACK PREMIUM GSIA - 10000F')">👑 COMMANDER PACK - 10000 F</button>
 </div>
@@ -99,6 +116,21 @@ function demo(l){ window.open(l,"_blank"); }
 function filtrer(){ let v=document.getElementById('search').value.toLowerCase(); document.querySelectorAll('.card').forEach(c=>{ c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none'; }); }
 function filtreCat(cat,btn){ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.card').forEach(c=>{ c.style.display=(cat=='tout'||c.getAttribute('data-cat').includes(cat))?'block':'none'; }); }
 let v=1247; setInterval(()=>{ v+=Math.floor(Math.random()*3); document.getElementById('visiteurs').innerText=v.toLocaleString(); },4000);
+function parler(){
+  speechSynthesis.cancel();
+  let txt="Bienvenue sur GSIA Marketplace. Un examen blanc, ce n'est pas seulement des copies à corriger. C'est aussi des listes à préparer, des salles à répartir, des notes à saisir et des résultats à calculer. GSIA Marketplace, développé par GSIA Studio à Lomé, centralise tout. Inscrivez vos élèves, créez vos salles, saisissez vos notes, les totaux et les moyennes sont calculés automatiquement. Essayez gratuitement, puis continuez pour mille francs CFA par semaine. Contactez-nous sur WhatsApp au quatre-vingt-douze, quatre-vingt-un, soixante-quinze, quatre-vingt-treize. GSIA Marketplace, la technologie à portée de tous.";
+  let u=new SpeechSynthesisUtterance(txt); u.lang='fr-FR'; u.rate=0.95;
+  document.getElementById('voixTxt').innerText="🔊 La voix IA parle... Écoute bien DG";
+  speechSynthesis.speak(u);
+}
+function parlerExam(){
+  speechSynthesis.cancel();
+  let txt="GSIA Exam Blanc. Vos examens blancs, sans casse-tête. Inscrivez vos élèves, importez vos listes. Créez vos salles, répartissez les élèves automatiquement. Saisissez les notes par matière, les totaux et moyennes sont calculés automatiquement. Consultez les résultats, imprimez les relevés et les classements. Même sans internet pendant sept jours. Essayez gratuitement pendant un jour, puis continuez pour mille francs par semaine. Contactez GSIA Studio sur WhatsApp au quatre-vingt-douze, quatre-vingt-un, soixante-quinze, quatre-vingt-treize.";
+  let u=new SpeechSynthesisUtterance(txt); u.lang='fr-FR'; u.rate=0.95;
+  document.getElementById('voixTxt').innerText="🔊 Explication EXAM-BLANC en cours...";
+  speechSynthesis.speak(u);
+}
+function stopVoix(){ speechSynthesis.cancel(); document.getElementById('voixTxt').innerText="Voix arrêtée. Appuie sur ÉCOUTER pour recommencer."; }
 </script>
 </body>
 </html>
