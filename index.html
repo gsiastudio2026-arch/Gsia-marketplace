@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSIA MARKETPLACE - Applications, Jeux, IA, Formations au Togo | Lomé</title>
+<meta name="description" content="GSIA MARKETPLACE Togo - La technologie à portée de tous. Jeux gratuits, applications IA, Moto Pilot, formations, vidéos virales. Lomé, Aného, Togo. Paiement Mixx by Yas et Flooz.">
+<meta name="keywords" content="GSIA, GSIA STUDIO, Togo, Lomé, application Togo, IA Togo, moto pilot, formation Togo, jeu Togo, Mixx, Flooz">
+<style>
+body{background:#0a140f;color:#fff;font-family:Arial;margin:0;text-align:center}
+header{background:#FFD700;color:#000;padding:22px 10px}
+header h1{margin:0;font-size:30px} .badge{background:#000;color:#FFD700;padding:5px 12px;border-radius:20px;font-size:12px}
+nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;background:#111;padding:10px;position:sticky;top:0;z-index:10}
+nav button{background:#222;color:#fff;border:1px solid #333;padding:9px 12px;border-radius:20px;font-weight:bold}
+nav button.active{background:#FFD700;color:#000}
+#search{width:90%;max-width:420px;padding:12px;border-radius:20px;border:none;margin:14px auto;display:block}
+.hero{background:#1a2a20;margin:10px;border-radius:14px;padding:14px;text-align:left}
+.grid{max-width:450px;margin:auto;padding:10px}
+.card{background:#1a2a20;border:2px solid #333;border-radius:15px;padding:14px;margin-bottom:14px;text-align:left}
+.card h3{color:#FFD700;margin:0}.card p{font-size:13px}
+.price{font-size:21px;font-weight:bold;color:#00ff00}.old{color:#aaa;text-decoration:line-through;font-size:13px}
+button.buy{width:100%;padding:12px;border:none;border-radius:12px;font-weight:bold;font-size:16px;margin-top:8px}
+.gold{background:#FFD700}.green{background:#00a651;color:#fff}.grey{background:#333;color:#fff}.blue{background:#007bff;color:#fff}
+.paybox{background:#2a1a00;border:2px solid #FFD700;border-radius:12px;padding:12px;margin:12px auto;max-width:430px;text-align:left;font-size:13px}
+.freeTag{background:#00a651;color:#fff;padding:3px 8px;border-radius:10px;font-size:11px}
+</style>
+</head>
+<body>
+<header>
+<div class="badge">GSIA STUDIO - LOMÉ, TOGO 🇹🇬</div>
+<h1>GSIA MARKETPLACE 🛒</h1>
+<p><b>Viens t'abreuver chaque jour.</b><br>Jeux gratuits, IA, vidéos, formations. La technologie à portée de tous.</p>
+<p style="font-size:12px">🔥 <span id="visiteurs">1 247</span> personnes sont venues boire aujourd'hui</p>
+</header>
+<nav>
+<button class="active" onclick="filtreCat('tout',this)">🏠 Tout</button>
+<button onclick="filtreCat('gratuit',this)">🎁 GRATUIT</button>
+<button onclick="filtreCat('jeu',this)">🎮 Jeux</button>
+<button onclick="filtreCat('formation',this)">🎓 Formations</button>
+<button onclick="filtreCat('premium',this)">👑 Premium</button>
+</nav>
+<input id="search" placeholder="🔍 Cherche : moto, ia, jeu, formation..." onkeyup="filtrer()">
+<div class="hero">
+<b>🎁 ZONE GRATUITE - ABREUVE-TOI :</b><br>
+Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu reviens demain.<br>
+<button class="buy blue" onclick="commander('Je veux recevoir le GRATUIT du jour')">💧 RECEVOIR LE GRATUIT DU JOUR</button>
+</div>
+<div class="paybox">
+<b>💳 COMMENT PAYER ?</b><br>
+1. Clique COMMANDER -> WhatsApp s'ouvre<br>
+2. Paie par <b>Mixx by Yas</b> ou <b>Flooz</b> au <b>+228 92 81 75 93</b><br>
+3. Tu reçois le lien sur WhatsApp. Simple.
+</div>
+<div class="grid" id="grid">
+<div class="card" data-cat="gratuit jeu" data-nom="moto pilot demo gratuit">
+<h3>🛵 GSIA MOTO PILOT - DÉMO GRATUITE <span class="freeTag">GRATUIT</span></h3>
+<p>Teste la moto qui roule seule Lomé -> Aného. Frein auto, klaxon, phare. Joue gratuitement maintenant.</p>
+<button class="buy grey" onclick="demo('https://gsiastudio2026-arch.github.io/Gsia-moto-pilot/?v=5')">🎮 JOUER GRATUIT MAINTENANT</button>
+</div>
+<div class="card" data-cat="jeu premium" data-nom="moto pilot v5">
+<h3>🛵 GSIA MOTO PILOT V5 - FINALE ⭐ BEST SELLER</h3>
+<p>Version complète : Score, Distance 45km, Carburant, Station Total, Son moteur VROUM. Sans pub.</p>
+<p class="price">2 000 F <span class="old">5 000 F</span></p>
+<button class="buy gold" onclick="commander('GSIA MOTO PILOT V5 - 2000F')">🛒 COMMANDER - 2000 F</button>
+</div>
+<div class="card" data-cat="gratuit" data-nom="citation motivation">
+<h3>💧 CITATION DU JOUR - GRATUITE</h3>
+<p>"Le Togo n'attend pas l'avenir. Le Togo le construit." - GSIA STUDIO<br>Partage ça sur ton statut WhatsApp, tes amis vont venir ici.</p>
+<button class="buy grey" onclick="commander('Je veux la citation du jour')">💧 RECEVOIR SUR WHATSAPP</button>
+</div>
+<div class="card" data-cat="gratuit" data-nom="cerveau ia affiche">
+<h3>🧠 GSIA CERVEAU IA - AFFICHE VERTE & OR</h3>
+<p>L'affiche GSIA STUDIO verte et or que tout le monde partage. Version HD pour ton statut WhatsApp.</p>
+<p class="price">Vidéo : 0 F | Pack Affiche HD : 1 000 F</p>
+<button class="buy gold" onclick="commander('PACK AFFICHE GSIA STUDIO - 1000F')">🛒 PACK AFFICHE - 1000 F</button>
+</div>
+<div class="card" data-cat="formation premium" data-nom="formation">
+<h3>🎓 FORMATION GSIA - Crée ton application en 7 jours</h3>
+<p>Avec ton téléphone seulement, sans ordinateur. Tu crées ton application comme MOTO PILOT.</p>
+<p class="price">5 000 F <span class="old">10 000 F</span></p>
+<button class="buy gold" onclick="commander('FORMATION GSIA 7 JOURS - 5000F')">🛒 COMMANDER - 5000 F</button>
+</div>
+<div class="card" data-cat="premium" data-nom="pack premium tout">
+<h3>👑 PACK PREMIUM GSIA - TOUT</h3>
+<p>MOTO PILOT V5 + AFFICHE GSIA + Formation 7 jours + Groupe privé + Toutes les futures applis.</p>
+<p class="price">10 000 F <span class="old">20 000 F</span></p>
+<button class="buy green" onclick="commander('PACK PREMIUM GSIA - 10000F')">👑 COMMANDER PACK - 10000 F</button>
+</div>
+</div>
+<div class="paybox">
+<b>📞 ASSISTANCE GSIA :</b><br>WhatsApp : <b>+228 92 81 75 93</b> - Lomé, Togo<br>
+Réponse 8h à 22h. On t'aide à payer par Mixx / Flooz.
+</div>
+<footer>© 2026 GSIA STUDIO - GSIA MARKETPLACE<br>Site vitrine Togo - Paiement manuel Mixx / Flooz via WhatsApp</footer>
+<script>
+const WHATSAPP="22892817593";
+function commander(p){ let m=encodeURIComponent("Bonjour GSIA STUDIO 🇹🇬, je veux : "+p+". Comment je paie par Mixx / Flooz ?"); window.open("https://wa.me/"+WHATSAPP+"?text="+m,"_blank"); }
+function demo(l){ window.open(l,"_blank"); }
+function filtrer(){ let v=document.getElementById('search').value.toLowerCase(); document.querySelectorAll('.card').forEach(c=>{ c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none'; }); }
+function filtreCat(cat,btn){ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.card').forEach(c=>{ c.style.display=(cat=='tout'||c.getAttribute('data-cat').includes(cat))?'block':'none'; }); }
+let v=1247; setInterval(()=>{ v+=Math.floor(Math.random()*3); document.getElementById('visiteurs').innerText=v.toLocaleString(); },4000);
+</script>
+</body>
+</html>
