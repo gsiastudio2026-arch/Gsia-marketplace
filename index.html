@@ -33,6 +33,10 @@ button.buy{width:100%;padding:12px;border:none;border-radius:12px;font-weight:bo
 .annonceCard h3{color:#000;margin:0}
 .pubBox{background:linear-gradient(90deg,#ff0080,#ff6600);border-radius:14px;padding:14px;margin:10px;text-align:left}
 .parrainBox{background:linear-gradient(90deg,#00a651,#007bff);border-radius:14px;padding:14px;margin:10px;text-align:left}
+.catBox{background:#1a2a20;border:2px solid #FFD700;border-radius:14px;padding:14px;margin:10px;text-align:left}
+.vendeurBox{background:linear-gradient(90deg,#FFD700,#ff6600);color:#000;border-radius:14px;padding:16px;margin:10px;text-align:left}
+.acheterBox{background:#fff;color:#000;border-radius:14px;padding:14px;margin:10px;text-align:left}
+.step{background:#f2f2f2;border-radius:10px;padding:10px;margin:8px 0;text-align:left}
 </style>
 </head>
 <body>
@@ -66,6 +70,40 @@ Comme dans la vidéo CEPD-BLANC, la voix t'explique tout en 60 secondes.<br>
 <p id="parrainTxt" style="font-size:12px">Ton code parrain : <b>GSIA-92817593</b> - Dis à tes amis de donner ce code sur WhatsApp.</p>
 </div>
 
+<!-- B - NOUVELLES CATEGORIES -->
+<div class="catBox">
+<b>🗂️ NOS CATÉGORIES - TROUVE VITE :</b><br>
+<span style="font-size:13px">Clique sur une catégorie pour voir seulement ce que tu cherches.</span><br>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:10px">
+<button class="buy gold" style="width:auto;padding:9px 12px" onclick="filtreCat('annonce',document.querySelector('nav button'))">📢 Annonces</button>
+<button class="buy grey" style="width:auto;padding:9px 12px" onclick="filtreCat('telephone',document.querySelector('nav button'))">📱 Téléphones</button>
+<button class="buy grey" style="width:auto;padding:9px 12px" onclick="filtreCat('moto',document.querySelector('nav button'))">🛵 Motos / Voitures</button>
+<button class="buy grey" style="width:auto;padding:9px 12px" onclick="filtreCat('terrain',document.querySelector('nav button'))">🏡 Immobilier</button>
+<button class="buy grey" style="width:auto;padding:9px 12px" onclick="filtreCat('formation',document.querySelector('nav button'))">🎓 Formations</button>
+<button class="buy grey" style="width:auto;padding:9px 12px" onclick="filtreCat('jeu',document.querySelector('nav button'))">🎮 Jeux</button>
+<button class="buy grey" style="width:auto;padding:9px 12px" onclick="filtreCat('tout',document.querySelector('nav button'))">🏠 Tout voir</button>
+</div>
+</div>
+
+<!-- C - COMMENT ACHETER -->
+<div class="acheterBox">
+<b>🛒 COMMENT ACHETER SUR GSIA ? C'EST SIMPLE - 3 ÉTAPES :</b>
+<div class="step"><b>1️⃣ TU CHOISIS :</b> Clique sur COMMANDER ou CONTACTER LE VENDEUR sur le produit que tu aimes.</div>
+<div class="step"><b>2️⃣ TU PAIES :</b> Tu paies par <b>Mixx by Yas</b> ou <b>Flooz</b> au <b>+228 92 81 75 93</b>. Tu envoies la capture sur WhatsApp.</div>
+<div class="step"><b>3️⃣ TU REÇOIS :</b> On te confirme en 5 min. Tu reçois ton lien, ton code, ou on te met en contact avec le vendeur à Lomé.</div>
+<p style="font-size:12px">✅ Pas de compte à créer. ✅ Pas de carte bancaire. ✅ 100% WhatsApp, comme tu fais déjà chaque jour.</p>
+<button class="buy green" onclick="commander('COMMENT ACHETER - Je veux acheter, aide-moi')">💬 JE VEUX ACHETER - AIDE-MOI SUR WHATSAPP</button>
+</div>
+
+<!-- A - PORTAIL VENDEUR -->
+<div class="vendeurBox">
+<b>🏪 PORTAIL VENDEUR GSIA - OUVRE TA BOUTIQUE :</b><br>
+<span style="font-size:13px;color:#000">Tu vends moto, téléphone, perruque, habit, nourriture ? Ouvre ta boutique sur GSIA. 1000+ personnes te voient chaque jour à Lomé.<br><b>1 000 F / 7 jours pour publier. Tu gardes tout ton argent, GSIA ne prend rien sur ta vente.</b></span><br>
+<button class="buy gold" onclick="commander('PORTAIL VENDEUR - Je veux ouvrir ma boutique vendeur sur GSIA. Mon nom :  / Mon produit :  / Mon quartier à Lomé : ')">🏪 OUVRIR MA BOUTIQUE VENDEUR - 1000 F</button>
+<button class="buy grey" onclick="commander('PORTAIL VENDEUR - Je veux savoir comment vendre sur GSIA avant de payer')">❓ COMMENT VENDRE ? PARLE-MOI D'ABORD</button>
+<p style="font-size:12px;color:#000">Déjà vendeur ? Tes annonces sont en bas : Moto APSONIC, iPhone 11, Terrain Aného. Clique sur CONTACTER LE VENDEUR pour tester.</p>
+</div>
+
 <nav>
 <button class="active" onclick="filtreCat('tout',this)">🏠 Tout</button>
 <button onclick="filtreCat('gratuit',this)">🎁 GRATUIT</button>
@@ -93,7 +131,6 @@ Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu
 
 <div class="grid" id="grid">
 
-<!-- ANNONCES - 1000F -->
 <div class="annonceCard" data-cat="annonce" data-nom="annonce moto vendre">
 <h3>📢 GSIA ANNONCES - VENDS VITE À LOMÉ <span class="hotTag">POPULAIRE</span></h3>
 <p><b>Tu veux vendre ?</b> Moto, téléphone, perruque, terrain, frigo...<br>Publie ici, 1 000+ personnes voient ton annonce chaque jour. Tu vends plus vite que sur Facebook.</p>
@@ -101,25 +138,24 @@ Chaque jour, une nouvelle chose gratuite. Tu testes, tu partages à tes amis, tu
 <button class="buy orange" onclick="commander('ANNONCE - Je veux publier mon annonce à 1000F / 7 jours. Mon produit : ')">➕ PUBLIER MON ANNONCE - 1000 F</button>
 </div>
 
-<div class="annonceCard" data-cat="annonce" data-nom="moto apsonic vendre lomé">
+<div class="annonceCard" data-cat="annonce moto" data-nom="moto apsonic vendre lomé">
 <h3>🛵 À VENDRE - Moto APSONIC 125 - Lomé Bè</h3>
 <p>Année 2023, très propre, papiers à jour. Prix : <b>450 000 F</b> à débattre. Contact vendeur via GSIA.</p>
 <button class="buy grey" onclick="commander('Je veux la Moto APSONIC 125 à 450 000F - Annonce GSIA')">💬 CONTACTER LE VENDEUR</button>
 </div>
 
-<div class="annonceCard" data-cat="annonce" data-nom="iphone samsung téléphone vendre">
+<div class="annonceCard" data-cat="annonce telephone" data-nom="iphone samsung téléphone vendre">
 <h3>📱 À VENDRE - iPhone 11 - 128Go - Agoè</h3>
 <p>Batterie 89%, jamais réparé, avec chargeur. Prix : <b>95 000 F</b>. Premier venu, premier servi.</p>
 <button class="buy grey" onclick="commander('Je veux le iPhone 11 à 95 000F - Annonce GSIA')">💬 CONTACTER LE VENDEUR</button>
 </div>
 
-<div class="annonceCard" data-cat="annonce" data-nom="terrain vendre aného">
+<div class="annonceCard" data-cat="annonce terrain" data-nom="terrain vendre aného">
 <h3>🏡 À VENDRE - Terrain 300m2 - Aného</h3>
 <p>Terrain titré, à 5 min de la route. Prix : <b>1 500 000 F</b>. Dossier complet disponible.</p>
 <button class="buy grey" onclick="commander('Je veux le Terrain 300m2 à Aného à 1 500 000F - Annonce GSIA')">💬 CONTACTER LE VENDEUR</button>
 </div>
 
-<!-- ANCIENS PRODUITS - ON GARDE TOUT -->
 <div class="card" data-cat="ecole" data-nom="exam blanc cepd ecole">
 <h3>🏫 GSIA EXAM-BLANC <span class="newTag">NOUVEAU</span></h3>
 <p><b>Vos examens blancs, sans casse-tête.</b><br>Inscrivez vos élèves, créez vos salles, répartissez automatiquement, saisissez les notes, les totaux et moyennes sont calculés automatiquement. Imprimez les relevés, les classements et les listes des admis. Même sans internet pendant 7 jours.<br>⭐ Pour les écoles du Togo</p>
@@ -187,7 +223,7 @@ const WHATSAPP="22892817593";
 function commander(p){ let m=encodeURIComponent("Bonjour GSIA STUDIO 🇹🇬, je veux : "+p+". Comment je paie par Mixx / Flooz ?"); window.open("https://wa.me/"+WHATSAPP+"?text="+m,"_blank"); }
 function demo(l){ window.open(l,"_blank"); }
 function filtrer(){ let v=document.getElementById('search').value.toLowerCase(); document.querySelectorAll('.card, .annonceCard').forEach(c=>{ c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none'; }); }
-function filtreCat(cat,btn){ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); document.querySelectorAll('.card, .annonceCard').forEach(c=>{ c.style.display=(cat=='tout'||c.getAttribute('data-cat').includes(cat))?'block':'none'; }); }
+function filtreCat(cat,btn){ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active')); if(btn) btn.classList.add('active'); document.querySelectorAll('.card, .annonceCard').forEach(c=>{ c.style.display=(cat=='tout'||c.getAttribute('data-cat').includes(cat))?'block':'none'; }); }
 let v=1282; setInterval(()=>{ v+=Math.floor(Math.random()*3); document.getElementById('visiteurs').innerText=v.toLocaleString(); },4000);
 function parler(){
   speechSynthesis.cancel();
@@ -205,8 +241,8 @@ function parlerExam(){
 }
 function stopVoix(){ speechSynthesis.cancel(); document.getElementById('voixTxt').innerText="Voix arrêtée. Appuie sur ÉCOUTER pour recommencer."; }
 function parrainer(){
-  let lien="https://gsiastudio2026-arch.github.io/gsia-marketplace/ - Code: GSIA-92817593 - Gagne 500F";
-  let m=encodeURIComponent("Salut ! Viens t'abreuver sur GSIA MARKETPLACE 🛒 Jeux gratuits, IA, Annonces, Exam Blanc. Si tu achètes, donne mon code GSIA-92817593 et je gagne 500F, toi aussi tu as une surprise. Lien : https://gsiastudio2026-arch.github.io/gsia-marketplace/");
+  let lien="https://gsiastudio2026-arch.github.io/Gsia-marketplace/ - Code: GSIA-92817593 - Gagne 500F";
+  let m=encodeURIComponent("Salut ! Viens t'abreuver sur GSIA MARKETPLACE 🛒 Jeux gratuits, IA, Annonces, Exam Blanc. Si tu achètes, donne mon code GSIA-92817593 et je gagne 500F, toi aussi tu as une surprise. Lien : https://gsiastudio2026-arch.github.io/Gsia-marketplace/");
   window.open("https://wa.me/?text="+m,"_blank");
 }
 </script>
